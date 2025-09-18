@@ -91,6 +91,10 @@ repositories {
         name = "Shedaniel"
         url = uri("https://maven.shedaniel.me/")
     }
+    maven {
+        name = "Modrinth"
+        url = uri("https://api.modrinth.com/maven")
+    }
     mavenLocal()
 }
 
@@ -111,6 +115,8 @@ dependencies {
 
     modImplementation("me.shedaniel:RoughlyEnoughItems-fabric:${project["rei_version"]}")
     modImplementation("com.terraformersmc:modmenu:${project["modmenu_version"]}")
+
+    modImplementation("maven.modrinth:create-enchantment-industry-fabric:${project["cei_version"]}")
 }
 
 tasks.processResources {

@@ -2,7 +2,7 @@ package io.github.lucaargolo.kibe.blocks.vacuum
 
 import io.github.lucaargolo.kibe.blocks.getEntityType
 import io.github.lucaargolo.kibe.fluids.LIQUID_XP
-import io.github.lucaargolo.kibe.mixin.ExperienceOrbEntityAccessor
+import plus.dragons.createenchantmentindustry.EnchantmentIndustry;
 import io.github.lucaargolo.kibe.recipes.VACUUM_HOPPER_RECIPE_TYPE
 import io.github.lucaargolo.kibe.recipes.vacuum.VacuumHopperRecipe
 import io.github.lucaargolo.kibe.utils.SyncableBlockEntity
@@ -75,7 +75,7 @@ class VacuumHopperEntity(vacuumHopper: VacuumHopper, pos: BlockPos, state: Block
     // TODO: should probably check the result of the insertion?
     private fun addLiquidXp(qnt: Int) {
         Transaction.openOuter().use {
-            tank.insert(FluidVariant.of(LIQUID_XP), qnt * 81L, it)
+            tank.insert(FluidVariant.of(LIQUID_XP), qnt * EnchantmentIndustry.UNIT_PER_MB.toLong(), it)
             it.commit()
         }
     }
@@ -216,7 +216,7 @@ class VacuumHopperEntity(vacuumHopper: VacuumHopper, pos: BlockPos, state: Block
                 val distance: Double = it.pos.distanceTo(vecPos)
                 if (distance < 1.0) {
                     if(it is ExperienceOrbEntity) {
-                        entity.addLiquidXp((it as ExperienceOrbEntityAccessor).amount * 10)
+                        entity.addLiquidXp(it.experienceAmount)
                         it.remove(Entity.RemovalReason.DISCARDED)
                     }
                     if(it is ItemEntity) {

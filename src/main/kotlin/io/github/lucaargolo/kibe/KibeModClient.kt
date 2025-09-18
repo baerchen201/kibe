@@ -14,7 +14,6 @@ import io.github.lucaargolo.kibe.blocks.miscellaneous.RedstoneTimerEntityRendere
 import io.github.lucaargolo.kibe.blocks.miscellaneous.RedstoneTimerEntityRenderer.Companion.setupSelectorModel
 import io.github.lucaargolo.kibe.blocks.tank.TankCustomModel
 import io.github.lucaargolo.kibe.entities.initEntitiesClient
-import io.github.lucaargolo.kibe.fluids.initFluidsClient
 import io.github.lucaargolo.kibe.items.*
 import io.github.lucaargolo.kibe.items.cooler.CoolerTooltipComponent
 import io.github.lucaargolo.kibe.items.cooler.CoolerTooltipData
@@ -58,7 +57,6 @@ fun initClient() {
     initBlocksClient()
     initItemsClient()
     initEntitiesClient()
-    initFluidsClient()
     initExtrasClient()
     initPacketsClient()
 }

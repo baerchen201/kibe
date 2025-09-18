@@ -4,9 +4,10 @@
   "version": "${version}",
 
   "name": "Kibe",
-  "description": "A miscellaneous mod that adds a bunch of random, and mostly unoriginal things.",
+  "description": "A miscellaneous mod that adds a bunch of random, and mostly unoriginal things, now with Create support!",
   "authors": [
-    "D4rkness_King"
+    "D4rkness_King",
+    "baer1"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/kibe",
@@ -46,6 +47,7 @@
     "kibe.mixins.json"
   ],
   "depends": {
+    "create_enchantment_industry": ">=1.2.16",
     "fabricloader": ">=0.14.5",
     "fabric": ">=0.83.1",
     "fabric-language-kotlin": ">=1.9.5",

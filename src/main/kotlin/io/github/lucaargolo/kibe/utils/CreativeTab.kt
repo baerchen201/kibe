@@ -8,8 +8,6 @@ import io.github.lucaargolo.kibe.blocks.COOLER
 import io.github.lucaargolo.kibe.blocks.ENTANGLED_CHEST
 import io.github.lucaargolo.kibe.blocks.ENTANGLED_TANK
 import io.github.lucaargolo.kibe.blocks.TANK
-import io.github.lucaargolo.kibe.fluids.LIQUID_XP
-import io.github.lucaargolo.kibe.fluids.getFluidBucket
 import io.github.lucaargolo.kibe.items.*
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants
@@ -39,7 +37,7 @@ private fun appendItems(): List<ItemStack> {
         KIBE, CURSED_KIBE, GOLDEN_KIBE, DIAMOND_KIBE,
         CURSED_DIRT, CURSED_DROPLETS, CURSED_SEEDS, CURSED_LASSO, GOLDEN_LASSO, DIAMOND_LASSO,
         ENTANGLED_CHEST, ENTANGLED_BAG, ENTANGLED_TANK, ENTANGLED_BUCKET, FLUID_HOPPER, OBSIDIAN_SAND, WITHER_PROOF_BLOCK, WITHER_PROOF_SAND, WITHER_PROOF_GLASS, WITHER_BUILDER, PLACER, BREAKER, IGNITER, DRAWBRIDGE,
-        POCKET_TRASH_CAN, POCKET_CRAFTING_TABLE, REDSTONE_TIMER, TRASH_CAN, VACUUM_HOPPER, LIQUID_XP, XP_SHOWER, XP_DRAIN,
+        POCKET_TRASH_CAN, POCKET_CRAFTING_TABLE, REDSTONE_TIMER, TRASH_CAN, VACUUM_HOPPER,
         MAGNET, DIAMOND_RING, ANGEL_RING, MAGMA_RING, WATER_RING, LIGHT_RING, GLIDER_LEFT_WING, GLIDER_RIGHT_WING,
         WHITE_GLIDER, ORANGE_GLIDER, MAGENTA_GLIDER, LIGHT_BLUE_GLIDER, YELLOW_GLIDER, LIME_GLIDER, PINK_GLIDER, GRAY_GLIDER,
         LIGHT_GRAY_GLIDER, CYAN_GLIDER, BLUE_GLIDER, PURPLE_GLIDER, GREEN_GLIDER, BROWN_GLIDER, RED_GLIDER, BLACK_GLIDER,
@@ -58,7 +56,6 @@ private fun appendItems(): List<ItemStack> {
         list.add(when(element) {
             is Item -> ItemStack(element)
             is Block -> ItemStack(element.asItem())
-            is Fluid -> ItemStack(getFluidBucket(element))
             else -> ItemStack.EMPTY
         })
     }

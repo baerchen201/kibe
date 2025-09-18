@@ -11,8 +11,6 @@ import io.github.lucaargolo.kibe.blocks.initBlocks
 import io.github.lucaargolo.kibe.effects.CURSED_EFFECT
 import io.github.lucaargolo.kibe.effects.initEffects
 import io.github.lucaargolo.kibe.entities.initEntities
-import io.github.lucaargolo.kibe.fluids.LIQUID_XP
-import io.github.lucaargolo.kibe.fluids.initFluids
 import io.github.lucaargolo.kibe.items.*
 import io.github.lucaargolo.kibe.items.entangledbucket.EntangledBucket
 import io.github.lucaargolo.kibe.items.miscellaneous.WoodenBucket
@@ -123,7 +121,6 @@ fun init() {
     initEntities()
     initEffects()
     initLootTables()
-    initFluids()
     initPackets()
     initExtras()
 }
@@ -236,18 +233,6 @@ fun initExtras() {
             val bucketFluid = Fluids.WATER
             if (bucketItem == WATER_WOODEN_BUCKET) {
                 return@register FullItemFluidStorage(context, WOODEN_BUCKET, FluidVariant.of(bucketFluid), FluidConstants.BUCKET)
-            }
-        }
-        return@register null
-    }
-    FluidStorage.combinedItemApiProvider(Items.GLASS_BOTTLE).register {
-        EmptyItemFluidStorage(it, Items.EXPERIENCE_BOTTLE, LIQUID_XP, FluidConstants.BOTTLE)
-    }
-    FluidStorage.GENERAL_COMBINED_PROVIDER.register { context ->
-        (context.itemVariant.item as? ExperienceBottleItem)?.let { bottleItem ->
-            val bottleFluid = LIQUID_XP
-            if (bottleItem == Items.EXPERIENCE_BOTTLE) {
-                return@register FullItemFluidStorage(context, Items.GLASS_BOTTLE, FluidVariant.of(bottleFluid), FluidConstants.BOTTLE)
             }
         }
         return@register null

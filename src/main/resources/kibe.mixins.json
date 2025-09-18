@@ -9,7 +9,6 @@
     "CraftingTableContainerMixin",
     "EndermanEntityMixin",
     "EntityMixin",
-    "ExperienceOrbEntityAccessor",
     "HostileEntityMixin",
     "BlockRenderViewMixin",
     "LivingEntityMixin",

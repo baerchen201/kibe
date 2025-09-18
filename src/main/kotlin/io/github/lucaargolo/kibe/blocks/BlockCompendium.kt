@@ -211,8 +211,6 @@ val BASALT_GENERATOR_MK5 = registerWithEntity<BlockGeneratorBlockEntity>(Identif
 val LIGHT_SOURCE = register(Identifier(MOD_ID, "light_source"), LightSource(), false)
 val CHUNK_LOADER = registerWithEntity<ChunkLoaderBlockEntity>(Identifier(MOD_ID, "chunk_loader"), ChunkLoader())
 val TANK = registerWithEntity<TankBlockEntity>(Identifier(MOD_ID, "tank"), Tank(), hasBlockItem = false, renderer = { TankBlockEntityRenderer::class }, apiRegistrations = { FluidStorage.SIDED.registerForBlockEntity(TankBlockEntity.Companion::getFluidStorage, it) })
-val XP_SHOWER = registerWithEntity<XpShowerBlockEntity>(Identifier(MOD_ID, "xp_shower"), XpShower())
-val XP_DRAIN = register(Identifier(MOD_ID, "xp_drain"), XpDrain())
 val IGNITER = register(Identifier(MOD_ID, "igniter"), Igniter())
 val FLUID_HOPPER = registerWithEntity<FluidHopperBlockEntity>(
     Identifier(MOD_ID, "fluid_hopper"),
